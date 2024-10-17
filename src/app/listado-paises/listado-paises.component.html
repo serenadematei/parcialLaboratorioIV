@@ -1,0 +1,16 @@
+<div class="jumbotron">
+    <div class="container-md">
+        <div class="row overflow-auto" style="max-height: 300px;">
+            <table class="table table-striped">
+                <tbody>
+                    <tr *ngFor="let pais of listaPaises">
+                        <button class="pais-button" type="button" 
+                         (click)="emitirPais(pais.nombre)">
+                        <td>{{ pais.nombre }}</td>
+                        <td><img [src]="pais.bandera" class="" style="width: 50px; height: 25px;"></td>
+                        </button>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

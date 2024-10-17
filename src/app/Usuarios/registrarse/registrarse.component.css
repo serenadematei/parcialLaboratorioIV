@@ -1,0 +1,24 @@
+.background-image {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #844366;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.botones-color {
+    background-color: #f48fb1; /* Rosado medio */
+    border-color: #d03569;
+}
+.botones-color:hover {
+    background-color: #f06292; /* Rosado más oscuro */
+    border-color: #d03569;
+}
+.componente-color{
+    background-color: #fa729f; 
+    border-color: #ac1e4d;
+}

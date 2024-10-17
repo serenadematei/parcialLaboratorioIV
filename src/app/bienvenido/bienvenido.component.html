@@ -1,0 +1,27 @@
+<div class="background-image"> 
+    <div class="fab-container">
+       <!-- <div>
+          <a class="fab" (click)="goTo('/home')">Ir a Inicio</a>
+        </div> -->
+      </div> 
+        <div class="container">
+            <br><br><br>
+            <div class="card text-center flip-in-hor-top mt-5  card-estilos">
+                <img class="card-img-top mx-auto" [src]="perfil?.avatar_url" alt="Avatar">
+                <div class="card-body">
+                    <h4 class="card-title">{{perfil?.name}}</h4>
+                    <p class="card-subtitle">Buenos Aires - Argentina</p>
+                    <p class="card-text">{{perfil?.bio}}</p>
+                    <p class="card-text">
+                        Estudiante de programación - UTN
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container text-center mt-3"  *ngIf="!isLoggedIn">
+            <input type="button" class="btn btn-primary botones-color mr-2" value="Iniciar sesión" (click)="goTo('/login')"/>
+            <input type="button" class="btn btn-primary botones-color ml-2" value="Registrarse" (click)="goTo('/registrarse')"/>
+        </div>
+    
+</div>

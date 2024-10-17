@@ -1,0 +1,37 @@
+.main-container {
+    margin-top: 40px;
+    margin-bottom: 150px;
+}
+
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: #aaaaaa;
+    color: rgb(255, 255, 255);
+  }
+
+  tr {
+    position: sticky;
+    top: 0;
+    background-color: #aaaaaa;
+    color: rgb(255, 255, 255);
+  }
+  .pais-button {
+    display: flex; /* Utiliza Flexbox para alinear los contenidos */
+    align-items: center; /* Alinea verticalmente */
+    justify-content: space-between; /* Espacia uniformemente entre el texto y la imagen */
+    width: 100%; /* Asegura que el botón ocupe todo el ancho de la celda */
+    padding: 10px; /* Espaciado interno */
+    background-color: white; /* Color de fondo */
+    color: black; /* Color del texto */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano */
+    transition: background-color 0.3s; /* Transición suave */
+    text-decoration: none; /* Sin subrayado */
+  }
+  
+  .pais-button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+  }
+  

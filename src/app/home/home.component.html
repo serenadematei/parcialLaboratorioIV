@@ -1,0 +1,23 @@
+<div class="background-image"></div>
+<section id="services" class="services">
+  <div class="container" data-aos="fade-up">
+    <div class="fab-container"> 
+    <div *ngIf="isLoggedIn">
+      <a class="fab" (click)="logout()">Cerrar sesión</a>
+    </div>
+    <div *ngIf="!isLoggedIn">
+      <a class="fab" (click)="goTo('/login')">Iniciar sesión</a>
+    </div> 
+  </div>
+    <br>
+    <br>
+    <div class="card-container">
+      <div class="card" [class.disabled]="!isLoggedIn" (click)="isLoggedIn ? altaPersona() : null" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card-icon"><i class="fa-regular fa-user"></i></div>
+        <h4>Alta chofer</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+

@@ -1,0 +1,39 @@
+<div class="background-image"> </div>
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100 ">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
+              <div class="card bg-success text-white componente-color" style="border-radius: 0px;">
+                  <div class="card-body p-5 text-center componente-color">
+
+                      <div class="mb-md-5 mt-md-4 pb-5 componente-color">
+
+                          <h2 class="fw-bold mb-2 text-uppercase">Iniciar sesion</h2>
+                          <p class="text-white-50 mb-5">Ingrese sus datos</p>
+
+                          <form [formGroup]="formLogin">
+
+                              <div data-mdb-input-init class="form-outline form-white mb-4">
+                                  <input type="email" style="text-align: center;" formControlName="email" [(ngModel)]="credenciales.email" maxlength="35" placeholder="Email" id=" typeEmailX" class="form-control form-control-lg" />
+                              </div>
+
+                              <div data-mdb-input-init class="form-outline form-white mb-4">
+                                  <input type="password" style="text-align: center;" formControlName="password" [(ngModel)]="credenciales.password" maxlength="35" placeholder="Contraseña" id="typePasswordX" class="form-control form-control-lg" />
+                              </div>
+
+                              <div class="mb-3">
+                                  <button (click)="login()" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5 mb-3 botones-color" type="submit">Ingresar</button>
+                              </div>
+                              <div class="mb-3 d-grid gap-2">
+                                  <button (click)="loginLoadAdmin()" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5 botones-color" type="submit">Administrador predeterminado</button>
+                              </div>
+                              <div class="mb-3 d-grid gap-2">
+                                  <button (click)="loginLoadEmpleado()" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5 botones-color" type="submit">Empleado predeterminado</button>
+                              </div>
+                          </form>
+
+                          <p class="mb-0">¿Aun no tienes una cuenta? 
+                            <button class="btn btn-link text-white-50 fw-bold " (click)="goTo('/registrarse')">Registrarse</button>
+                          </p>
+                      </div>
+

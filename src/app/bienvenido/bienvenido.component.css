@@ -1,0 +1,57 @@
+
+.card {
+    border: 1px solid #880e4f; /* Borde rosado oscuro */
+    transition: transform 0.5s;
+    max-width: 300px; /* Tamaño máximo de la tarjeta */
+    margin: 20px auto; /* Centrar la tarjeta */
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card-title {
+    color: #880e4f; /* Rosado oscuro */
+}
+.botones-color {
+    background-color: #f48fb1; /* Rosado medio */
+    border-color: #d03569;
+}
+.botones-color:hover {
+    background-color: #f06292; /* Rosado más oscuro */
+    border-color: #d03569;
+}
+.background-image {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #844366;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fab-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+
+  .fab {
+    background-color: #ed6794;  
+    color: white; 
+    padding: 10px 20px; 
+    border: none;  
+    border-radius: 8px; 
+    font-size: 16px; 
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; 
+    text-decoration: none; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }

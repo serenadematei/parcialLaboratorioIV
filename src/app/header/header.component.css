@@ -1,0 +1,41 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #880e4f !important;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-brand {
+    color: white !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 15px;
+  }
+  
+  .navbar-nav .btn-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .navbar-nav .btn-link:hover {
+    color: #ffebee;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  .navbar-nav .btn-link.nav-link.active {
+    background-color: #c2185b;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .navbar-collapse {
+    justify-content: flex-end;
+  }

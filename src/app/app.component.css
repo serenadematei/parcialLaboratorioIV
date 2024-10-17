@@ -1,0 +1,14 @@
+.navbar {
+    background-color:  #ed6794; 
+}
+.navbar-brand {
+    color: #880e4f; 
+    font-size: 24px;
+    font-weight: bold;
+
+}
+.container-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
