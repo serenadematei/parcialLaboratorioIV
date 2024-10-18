@@ -5,12 +5,12 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
 import { collection, doc, setDoc, Firestore } from '@angular/fire/firestore';
-//import { LetrasDirectiva} from '../../directivas/letras.directive';
+import { LetrasDirectiva} from '../../directivas/letras.directive';
 
 @Component({
   selector: 'app-registrarse',
   standalone: true,
-  imports: [[CommonModule, FormsModule, ReactiveFormsModule, /*LetrasDirectiva*/]],
+  imports: [[CommonModule, FormsModule, ReactiveFormsModule, LetrasDirectiva]],
   templateUrl: './registrarse.component.html',
   styleUrl: './registrarse.component.css'
 })

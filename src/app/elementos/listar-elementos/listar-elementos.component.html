@@ -1,0 +1,35 @@
+<main role="main">
+    <div class="jumbotron container-fluid py-5 bg-light rounded-3">
+      <h2 class="display-6 text-center mb-4"></h2>
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Tipo</th>
+              <th>Capacidad Promedio</th>
+              <th>Cantidad Ruedas</th>
+              <!-- <th>Acciones</th> -->
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let elemento of listaElementos">
+              <td>{{elemento.nombre}}</td>
+              <td>{{elemento.tipo}}</td>
+              <td>{{elemento.capacidadPromedio}}</td>
+              <td>{{elemento.cantidadRuedas}}</td>
+
+             
+              <td>
+                <button type="button" class="btn btn-sm btn-outline-secondary" (click)="modificarElemento(elemento);">Modificar</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-sm btn-outline-secondary" (click)="borrarElemento(elemento);">Borrar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>

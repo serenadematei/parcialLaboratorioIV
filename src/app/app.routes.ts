@@ -28,6 +28,14 @@ export const routes: Routes = [
         canActivate: [loggedGuard], canDeactivate: [infoGuard]
     },
     {
+        path: 'listado-repartidores',
+       loadComponent: () => import('./Usuarios/listado/listado.component').then((m) => m.ListadoComponent),
+    },
+    {
+        path: 'salen-helados',
+       loadComponent: () => import('./elementos/salen-elementos/salen-elementos.component').then((m) => m.SalenElementosComponent),
+    },
+    {
         path: 'home',
         loadComponent: () => import('./home/home.component').then(m => m.HomeComponent),
        

@@ -16,7 +16,7 @@ import { User } from 'firebase/auth';
 @Component({
   selector: 'app-alta',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, ListadoPaisesComponent,NumerosDirectiva,LetrasDirectiva],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, ListadoPaisesComponent,NumerosDirectiva, LetrasDirectiva],
   templateUrl: './alta.component.html',
   styleUrl: './alta.component.css'
 })

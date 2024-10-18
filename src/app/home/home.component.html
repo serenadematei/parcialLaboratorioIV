@@ -1,20 +1,30 @@
 <div class="background-image"></div>
 <section id="services" class="services">
   <div class="container" data-aos="fade-up">
-    <div class="fab-container"> 
-    <div *ngIf="isLoggedIn">
-      <a class="fab" (click)="logout()">Cerrar sesión</a>
+    <div class="fab-container">
+      <div *ngIf="isLoggedIn">
+        <a class="fab" (click)="logout()">Cerrar sesión</a>
+      </div>
+      <div *ngIf="!isLoggedIn">
+        <a class="fab" (click)="goTo('/login')">Iniciar sesión</a>
+      </div>
     </div>
-    <div *ngIf="!isLoggedIn">
-      <a class="fab" (click)="goTo('/login')">Iniciar sesión</a>
-    </div> 
-  </div>
+
     <br>
     <br>
     <div class="card-container">
       <div class="card" [class.disabled]="!isLoggedIn" (click)="isLoggedIn ? altaPersona() : null" data-aos="zoom-in" data-aos-delay="100">
         <div class="card-icon"><i class="fa-regular fa-user"></i></div>
         <h4>Alta chofer</h4>
+      </div>
+      <div class="card" [class.disabled]="!isLoggedIn" (click)="isLoggedIn ? listarPersonas() : null" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h4>Ver listado de choferes</h4>
+      </div>
+      <div class="card" [class.disabled]="userRole !== 'admin' || !isLoggedIn" (click)="userRole === 'admin' ? salenHelados() : null" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card-icon"><i class="fa-solid fa-ice-cream"></i></div>
+        <h4>Administrar vehículos</h4>
+        <p style="color: rgb(145, 58, 110);">(Disponible únicamente para usuarios con perfil de administrador)</p>
       </div>
     </div>
   </div>

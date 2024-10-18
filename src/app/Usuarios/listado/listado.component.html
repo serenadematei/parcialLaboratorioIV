@@ -1,0 +1,62 @@
+
+<div class="background-image"></div>
+<main>
+<div class="container py-4">
+  <header class="pb-3 mb-4 border-bottom">
+    <h1 class="d-flex align-items-center text-body-emphasis text-decoration-none">
+      <span class="fs-4">Listado de Choferes</span> <!--cambie el <a> por h1-->
+    </h1>
+  </header>
+
+  <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+      <h1 class="display-5 fw-bold"></h1>
+      <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Pais de Origen</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr *ngFor="let elemento of listaElementos; index as i" 
+            (click)="seleccionarElemento(elemento) ">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ elemento.nombre }}</td>
+            <td>{{ elemento.dni }}</td>
+            <td>{{ elemento.paisOrigen }}</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+
+  <div class="row align-items-md-stretch">
+    <div class="col-md-6">
+      <div class="h-100 p-5 text-bg-dark rounded-3">
+        <h2>Detalles del chofer</h2>
+       <app-persona-detalle class="col-md-4" [inputItemSeleccionado]="elemento" *ngIf="elemento">
+        </app-persona-detalle>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+        <h2>Detalles del pais</h2>
+        <app-pais-detalle class="col-md-4" [inputItemSeleccionado]="elemento" *ngIf="elemento">
+        </app-pais-detalle>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="fab-container">
+    <div>
+      <a class="fab" (click)="goTo('/home')">Ir a Inicio</a>
+    </div>
+  </div>
+</div>

@@ -79,10 +79,10 @@ export class AuthService {
     }
   }
 
-
   setAuthToken(token: string): void {
     localStorage.setItem(this.tokenKey, token);
   }
+
 
   getAuthToken(): string | null {
     return localStorage.getItem(this.tokenKey);
@@ -109,23 +109,6 @@ export class AuthService {
     });
   }
 
-  getUserRole(): Observable<string | null> {
-    return this.getCurrentUser().pipe(
-      switchMap(user => {
-        if (user) {
-          const userDocRef = doc(this.firestore, `users&role/${user.uid}`);
-          return from(getDoc(userDocRef)).pipe(
-            map(docSnap => {
-              const data = docSnap.data();
-              return data ? data['role'] : null;
-            })
-          );
-        } else {
-          return from(Promise.resolve(null));
-        }
-      })
-    );
-  }
 
   isLoggedIn(): boolean {
     return !!this.getAuthToken();

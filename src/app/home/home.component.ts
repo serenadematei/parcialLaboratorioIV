@@ -17,19 +17,38 @@ import Swal from 'sweetalert2';
 export class HomeComponent {
 
   currentUser$: Observable<User | null>;
+  userRole: string | null = null;
   isLoggedIn = false;
+
   constructor(private router: Router, private auth: AuthService) 
   {
     this.currentUser$ = this.auth.getCurrentUser();
-    
+
+    // Suscribirse al observable currentUser$
     this.currentUser$.subscribe(user => {
       this.isLoggedIn = !!user;
     });
+    // Suscribirse al observable userRole$
+    this.auth.userRole$.subscribe(role => {
+      this.userRole = role;
+    });
   }
-  
+
   altaPersona()
   {
     this.router.navigate(['/alta']);
+  }
+
+  
+  listarPersonas()
+  {
+    this.router.navigate(['/listado-repartidores']);
+  }
+
+  
+  salenHelados()
+  {
+    this.router.navigate(['/salen-helados']);
   }
 
   logout() {

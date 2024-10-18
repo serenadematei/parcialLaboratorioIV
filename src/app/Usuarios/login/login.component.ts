@@ -26,7 +26,7 @@ export class LoginComponent {
                                       password: ['', [Validators.required]],
                                     });
    }
-  
+ 
   async login() {
     try {
       await this.auth.login(this.formLogin.value);

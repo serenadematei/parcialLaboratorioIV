@@ -1,0 +1,48 @@
+<div class="background">
+    <div class="container">
+        <div class="col">
+          
+          <form class="needs-validation" novalidate>
+  
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+                <input [(ngModel)]="nombre" type="text" required minlength="4" maxlength="25" class="form-control" name="nombre" placeholder=""
+                [class.is-invalid]="nombre && (nombre.length < 4 || nombre.length > 25)">
+                <div *ngIf="nombre && (nombre.length < 4 || nombre.length > 25)" class="invalid-feedback">
+                  El nombre debe tener entre 4 y 25 caracteres.
+                </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="tipo" class="form-label">Tipo</label>
+              <select [(ngModel)]="tipo" class="form-select" name="tipo" required>
+                <option value="areo">Areo</option>
+                <option value="terrestre">Terrestre</option>
+                <option value="maritimo">Maritimo</option>
+              </select>
+            </div>
+  
+            <div class="mb-3">
+              <label for="capacidadPromedio" class="form-label">Capacidad Promedio</label>
+              <input [(ngModel)]="capacidadPromedio" type="number" required min="2" max="100" class="form-control" name="capacidadPromedio" placeholder="$"
+                     [class.is-invalid]="capacidadPromedio && (capacidadPromedio < 2 || capacidadPromedio > 100)">
+              <div *ngIf="capacidadPromedio && (capacidadPromedio < 2 || capacidadPromedio > 100)" class="invalid-feedback">
+                La capacidad Promedio debe estar entre 2 y 100.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="cantidadRuedas" class="form-label">cantidadRuedas</label>
+              <input [(ngModel)]="cantidadRuedas" type="number" required min="2" max="6" class="form-control" name="cantidadRuedas"
+              [class.is-invalid]="cantidadRuedas && (cantidadRuedas < 6 || cantidadRuedas > 2)">
+              <div *ngIf="cantidadRuedas && (cantidadRuedas < 2 || cantidadRuedas > 6)" class="invalid-feedback">
+                La cantidad de Ruedas debe estar entre 2 y 6.
+              </div>
+          </div>
+            <button class="btn btn-danger btn-lg btn-block" type="button" (click)="borrarElemento()">Eliminar</button>
+  
+            <p class="mt-2 text-success" *ngIf="correcto">Se eliminó correctamente</p>
+          </form>
+        </div>
+    </div>
+  </div>

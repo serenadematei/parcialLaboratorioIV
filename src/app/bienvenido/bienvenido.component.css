@@ -37,10 +37,10 @@
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-  }
+}
   
 
-  .fab {
+.fab {
     background-color: #ed6794;  
     color: white; 
     padding: 10px 20px; 
@@ -54,4 +54,5 @@
     display: flex; 
     align-items: center; 
     justify-content: center; 
-  }
+}
+

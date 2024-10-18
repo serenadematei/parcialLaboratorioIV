@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject, Observable, map, tap } from 'rxjs';
-//import { MovieResponse, Movie } from '../home/elemento.interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,12 +9,15 @@ import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 export class ApiService implements OnInit{
 
   private urlApi = 'https://restcountries.com/v3.1/region/';
+  private gitImage = 'https://api.github.com/users/Juliomdz';
   paises: any = [];
   private datosGitSubject = new BehaviorSubject<any>(null);
   paisSubject = new BehaviorSubject<any>(null);
 
   pais$: Observable<any> = this.paisSubject.asObservable();
   datosGit$: Observable<any> = this.datosGitSubject.asObservable();
+
+  
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +34,7 @@ export class ApiService implements OnInit{
       map((response: any) => {
 
         if (Array.isArray(response)) {
-          const paisesMapeados = response.slice(3,6).map((auxPais: any) => {
+          const paisesMapeados = response.slice(0,3).map((auxPais: any) => {
             const pais = {
               nombre: auxPais.name.common,
               region: auxPais.region,
@@ -50,7 +53,29 @@ export class ApiService implements OnInit{
     );
   }
 
-  
+  obtenerListadoParametro(url: any) {
+    return this.http.get(url);
+  }
+
+  obtenerImagen() {
+    this.http.get(this.gitImage).subscribe(
+      (datos: any) => {
+        if (typeof datos === 'object' && datos.login) {
+          const datosGit = [{
+            nombre: datos.name,
+            image: datos.avatar_url,
+            ubicacion: datos.location,
+          }];
+          this.datosGitSubject.next(datosGit);
+        } else {
+          console.error('Los datos obtenidos de la API no tienen el formato esperado');
+        }
+      },
+      (error) => {
+        console.error('Ocurrio un error al obtener datos de la API:', error);
+      }
+    );
+  }
 
   
 }

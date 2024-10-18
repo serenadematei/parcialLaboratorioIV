@@ -1,0 +1,46 @@
+<div class="background">
+    <div class="container">
+        <div class="col">
+          <form class="needs-validation" novalidate>
+
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input [(ngModel)]="elemento.nombre" *ngIf="elemento" type="text" required minlength="4" maxlength="12" class="form-control" name="nombre" placeholder="" disabled="true">
+                <input *ngIf="!elemento" type="text" class="form-control" name="nombre" placeholder="" disabled>
+              </div>
+  
+              <div class="mb-3">
+                <label for="tipo" class="form-label">Tipo</label>
+                <select [(ngModel)]="tipo" class="form-select" name="tipo" required>
+                  <option value="areo">Areo</option>
+                  <option value="terrestre">Terrestre</option>
+                  <option value="maritimo">Maritimo</option>
+                </select>
+              </div>
+    
+   
+              <div class="mb-3">
+                <label for="capacidadPromedio" class="form-label">Capacidad Promedio</label>
+                <input [(ngModel)]="capacidadPromedio" type="number" required min="2" max="100" class="form-control" name="capacidadPromedio" placeholder="$"
+                       [class.is-invalid]="capacidadPromedio && (capacidadPromedio < 2 || capacidadPromedio > 100)">
+                <div *ngIf="capacidadPromedio && (capacidadPromedio < 2 || capacidadPromedio > 100)" class="invalid-feedback">
+                  La capacidad Promedio debe estar entre 2 y 100.
+                </div>
+              </div>
+  
+              <div class="mb-3">
+                <label for="cantidadRuedas" class="form-label">cantidadRuedas</label>
+                <input [(ngModel)]="cantidadRuedas" type="number" required min="2" max="6" class="form-control" name="cantidadRuedas"
+                [class.is-invalid]="cantidadRuedas && (cantidadRuedas < 6 || cantidadRuedas > 2)">
+                <div *ngIf="cantidadRuedas && (cantidadRuedas < 2 || cantidadRuedas > 6)" class="invalid-feedback">
+                  La cantidad de Ruedas debe estar entre 2 y 6.
+                </div>
+            </div>
+  
+            <button class="btn btn-primary btn-lg btn-block" type="button" (click)="modificarElemento()">Modificar</button>
+           <!--  <p class="mt-2 text-success" *ngIf="correcto">Se modificó correctamente</p>-->
+          </form>
+
+      </div>
+    </div>
+  </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+//import { ApiService } from '../services/api.service'; 
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from 'firebase/auth';
@@ -14,15 +15,16 @@ import { AuthService } from '../services/auth.service';
   styleUrl: './bienvenido.component.css'
 })
 export class BienvenidoComponent implements OnInit{
- 
+
   currentUser$: Observable<User | null>;
   isLoggedIn = false;
   perfil:any;
   urlApi:string = "https://api.github.com/users/serenadematei";
 
   constructor( private http:HttpClient, private router: Router, private auth: AuthService){
+
     this.currentUser$ = this.auth.getCurrentUser();
-    
+
     this.currentUser$.subscribe(user => {
       this.isLoggedIn = !!user;
     });
